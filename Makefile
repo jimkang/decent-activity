@@ -6,3 +6,6 @@ build:
 
 build-dev:
 	$(BROWSERIFY) -d lib/bookmarklet-src.js > chrome/bookmarklet.js
+
+test:
+	node tests/parse-contacts-test.js

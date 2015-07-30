@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "MeFi Haps",
+  "description": "Gets the haps from your MeFi contacts",
+  "version": "1.0.0",
+
+  "permissions": [
+    "http://*.metafilter.com/*"
+  ],
+
+  "background": {
+    "scripts": ["scriptchain.js", "background.js"],
+    "persistent": false
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "19": "yet-another-bookmarklet-icon-19.png",
+      "38": "yet-another-bookmarklet-icon-38.png"
+    }
+  },
+
+  "icons": {
+    "16": "yet-another-bookmarklet-icon-16.png",
+    "128": "yet-another-bookmarklet-icon-128.png"
+  }
+}

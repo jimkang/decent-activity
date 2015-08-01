@@ -1,15 +1,15 @@
 var test = require('tape');
-var getMutualContactsFromHTML = require('../lib/get-mutual-contacts-from-html');
+var getActivitiesFromHTML = require('../lib/get-activities-from-html');
 var fs = require('fs');
 
-var contactsHTML = fs.readFileSync(
-  __dirname + '/fixtures/contacts.html',
+var userActivityHTML = fs.readFileSync(
+  __dirname + '/fixtures/user-activity.html',
   {
     encoding: 'utf8'
   }
 );
 
-var contactsInHTML = [
+var activitiesInHTML = [
   "88022",
   "158110",
   "35287",
@@ -115,6 +115,6 @@ var contactsInHTML = [
 
 test('Parse test', function parseTest(t) {
   t.plan(1);
-  var contacts = getMutualContactsFromHTML(contactsHTML);
-  t.deepEqual(contacts, contactsInHTML, 'Parses contacts correctly.');
+  var contacts = getActivitiesFromHTML(userActivityHTML);
+  t.deepEqual(contacts, activitiesInHTML, 'Parses activities correctly.');
 });

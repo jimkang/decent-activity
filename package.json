@@ -23,6 +23,7 @@
   "dependencies": {
     "basic-browser-request": "^2.0.1",
     "browserify": "^9.0.7",
+    "cheerio": "^0.19.0",
     "uglify-js": "^2.4.19"
   }
 }

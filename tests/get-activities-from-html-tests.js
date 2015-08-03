@@ -1,6 +1,7 @@
 var test = require('tape');
 var getActivitiesFromHTML = require('../lib/get-activities-from-html');
 var fs = require('fs');
+var jsonfile = require('jsonfile');
 
 var userActivityHTML = fs.readFileSync(
   __dirname + '/fixtures/user-activity.html',
@@ -9,112 +10,26 @@ var userActivityHTML = fs.readFileSync(
   }
 );
 
-var activitiesInHTML = [
-  "88022",
-  "158110",
-  "35287",
-  "42334",
-  "98288",
-  "126778",
-  "2726",
-  "102605",
-  "22004",
-  "47613",
-  "94529",
-  "77971",
-  "47877",
-  "39128",
-  "24716",
-  "166994",
-  "48794",
-  "92928",
-  "94701",
-  "47018",
-  "36675",
-  "65742",
-  "102420",
-  "20821",
-  "136548",
-  "129791",
-  "39543",
-  "36940",
-  "92689",
-  "103998",
-  "63809",
-  "40703",
-  "22307",
-  "85423",
-  "111294",
-  "73413",
-  "36852",
-  "29519",
-  "21609",
-  "58356",
-  "45762",
-  "37399",
-  "182267",
-  "48758",
-  "17220",
-  "81979",
-  "22558",
-  "292",
-  "85561",
-  "50870",
-  "18562",
-  "112558",
-  "16000",
-  "7061",
-  "18032",
-  "106261",
-  "118472",
-  "43282",
-  "33321",
-  "109101",
-  "96908",
-  "61447",
-  "6624",
-  "40916",
-  "64952",
-  "17447",
-  "33274",
-  "40648",
-  "47125",
-  "33482",
-  "61170",
-  "107761",
-  "108573",
-  "64677",
-  "40688",
-  "17646",
-  "126110",
-  "134219",
-  "91014",
-  "192264",
-  "17391",
-  "148248",
-  "21272",
-  "43875",
-  "25980",
-  "64548",
-  "35109",
-  "20041",
-  "30183",
-  "168809",
-  "18343",
-  "62806",
-  "111601",
-  "12646",
-  "99046",
-  "32816",
-  "137882",
-  "137029",
-  "49105",
-  "15301",
-  "81505"
-];
+var expectedActivities = jsonfile.readFileSync(
+  __dirname + '/fixtures/expected-user-activity.json'
+);
+
+expectedActivities = expectedActivities.map(restoreDate);
 
 test('Parse test', function parseTest(t) {
-  t.plan(1);
-  var contacts = getActivitiesFromHTML(userActivityHTML);
-  t.deepEqual(contacts, activitiesInHTML, 'Parses activities correctly.');
+  t.plan(expectedActivities.length);
+  var activities = getActivitiesFromHTML(userActivityHTML);
+
+  activities.forEach(checkActivity);
+
+  function checkActivity(activity, i) {
+    t.deepEqual(activity, expectedActivities[i], 'Parses activity correctly.');
+  }
 });
+
+function restoreDate(activity) {
+  return {
+    html: activity.html,
+    stamp: new Date(activity.stamp)
+  };
+}

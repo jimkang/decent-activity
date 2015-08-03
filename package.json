@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jimkang/yet-another-bookmarklet",
   "devDependencies": {
+    "jsonfile": "^2.2.1",
     "tape": "^3.0.3"
   },
   "dependencies": {

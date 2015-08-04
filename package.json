@@ -18,13 +18,16 @@
   },
   "homepage": "https://github.com/jimkang/yet-another-bookmarklet",
   "devDependencies": {
+    "call-next-tick": "^1.1.2",
     "jsonfile": "^2.2.1",
     "tape": "^3.0.3"
   },
   "dependencies": {
+    "async-waterfall": "^0.1.5",
     "basic-browser-request": "^2.0.1",
     "browserify": "^9.0.7",
     "cheerio": "^0.19.0",
+    "through2": "^2.0.0",
     "uglify-js": "^2.4.19"
   }
 }

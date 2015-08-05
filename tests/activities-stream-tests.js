@@ -31,8 +31,8 @@ test('Stream test', function streamTest(t) {
   var currentId = 0;
   var maxIds = 50;
 
-  t.plan(maxIds * 7 + 1);  
-  
+  t.plan(maxIds * 7 + 1);
+
   var activitiesStream = createActivitiesStream({
     makeRequest: mockMakeRequest,
     getActivitiesFromHTML: mockGetActivitiesFromHTML

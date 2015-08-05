@@ -2,6 +2,7 @@ var test = require('tape');
 var getActivitiesFromHTML = require('../lib/get-activities-from-html');
 var fs = require('fs');
 var jsonfile = require('jsonfile');
+var restoreDate = require('./fixtures/restore-date');
 
 var userActivityHTML = fs.readFileSync(
   __dirname + '/fixtures/user-activity.html',
@@ -26,10 +27,3 @@ test('Parse test', function parseTest(t) {
     t.deepEqual(activity, expectedActivities[i], 'Parses activity correctly.');
   }
 });
-
-function restoreDate(activity) {
-  return {
-    html: activity.html,
-    stamp: new Date(activity.stamp)
-  };
-}

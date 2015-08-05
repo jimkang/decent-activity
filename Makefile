@@ -11,4 +11,4 @@ test:
 	node tests/parse-contacts-test.js
 	node tests/get-activities-from-html-tests.js
 	node tests/activities-stream-tests.js
-
+	node tests/render-activities-tests.js

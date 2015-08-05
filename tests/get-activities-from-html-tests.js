@@ -18,12 +18,19 @@ var expectedActivities = jsonfile.readFileSync(
 expectedActivities = expectedActivities.map(restoreDate);
 
 test('Parse test', function parseTest(t) {
-  t.plan(expectedActivities.length);
-  var activities = getActivitiesFromHTML(userActivityHTML);
+  t.plan(expectedActivities.length * 2);
 
+  var activities = getActivitiesFromHTML(userActivityHTML);
   activities.forEach(checkActivity);
 
   function checkActivity(activity, i) {
-    t.deepEqual(activity, expectedActivities[i], 'Parses activity correctly.');
+    t.equal(
+      activity.stamp.getTime(),
+      expectedActivities[i].stamp.getTime(),
+      'Parses activity stamp.'
+    );
+    t.equal(
+      activity.html, expectedActivities[i].html, 'Parses activity html.'
+    );
   }
 });

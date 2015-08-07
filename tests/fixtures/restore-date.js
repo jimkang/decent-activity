@@ -1,8 +1,9 @@
+var _ = require('lodash');
+
 function restoreDate(activity) {
-  return {
-    html: activity.html,
-    stamp: new Date(activity.stamp)
-  };
+  var copy = _.cloneDeep(activity);
+  copy.stamp = new Date(activity.stamp);
+  return copy;
 }
 
 module.exports = restoreDate;

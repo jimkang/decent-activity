@@ -117,6 +117,7 @@ test('Rendered DOM matches data', function enterExitTest(t) {
 
     function checkActivityEl(d, i) {
       var activityAtPosition = activityGroup[i];
+      t.ok(d.id, 'Activity has an id.');
       t.equal(
         d.id, activityAtPosition.id, 'Activity is rendered in correct order.'
       );

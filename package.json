@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "accessor": "^1.0.1",
+    "array-viewfinder": "^1.0.1",
     "async-waterfall": "^0.1.5",
     "basic-browser-request": "^2.0.1",
     "browserify": "^9.0.7",

@@ -56,13 +56,16 @@ test('Render activities under the root by date', function renderTest(t) {
   activityEls.each(checkActivityEl);
 
   function checkActivityEl(d, i) {
-    activityEl = d3.select(this);
+    var activityRaw = this;
+    var activityEl = d3.select(activityRaw);
 
     t.ok(
       d.stamp < lastStampChecked,
       'Activity stamp precedes the previous activity stamp.'
     );
     lastStampChecked = d.stamp;
+
+    t.ok(activityEl.class('activity'), 'Element has activityClass.');
 
     var correspondingActivity = findActivityForStamp(d.stamp);
     t.equal(

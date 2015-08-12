@@ -24,5 +24,12 @@
   "icons": {
     "16": "yet-another-bookmarklet-icon-16.png",
     "128": "yet-another-bookmarklet-icon-128.png"
-  }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*.metafilter.com/*"],
+      "css": ["haps.css"]
+    }
+  ]  
 }

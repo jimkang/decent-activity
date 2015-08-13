@@ -2,9 +2,9 @@ var test = require('tape');
 var createRenderActivities = require('../lib/render-activities');
 var jsonfile = require('jsonfile');
 var jsdom = require('jsdom');
-var d3 = require('d3-selection');
 var restoreDate = require('./fixtures/restore-date');
 var _ = require('lodash');
+var d3 = require('d3-selection');
 
 var activities = jsonfile.readFileSync(
   __dirname + '/fixtures/activities-to-render.json'
@@ -24,6 +24,8 @@ function aStampIsOlderThanBStamp(a, b) {
 }
 
 test('Render activities under the root by date', function renderTest(t) {
+  t.plan(activities.length * 4 + 1);
+
   var document = jsdom.jsdom(
     '<div id="outer">' +
       'Hi!' +
@@ -67,6 +69,12 @@ test('Render activities under the root by date', function renderTest(t) {
 
     t.ok(activityEl.class('activity'), 'Element has activityClass.');
 
+    setTimeout(checkVisible, 600);
+
+    function checkVisible() {
+      t.ok(activityEl.class('haps-visible'), 'Element has haps-visible.');
+    }
+
     var correspondingActivity = findActivityForStamp(d.stamp);
     t.equal(
       activityEl.html(),
@@ -74,8 +82,6 @@ test('Render activities under the root by date', function renderTest(t) {
       'Activity element contains the expected html.'
     );
   }
-
-  t.end();
 });
 
 test('Rendered DOM matches data', function enterExitTest(t) {

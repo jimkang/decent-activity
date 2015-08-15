@@ -12,3 +12,4 @@ test:
 	node tests/get-activities-from-html-tests.js
 	node tests/activities-stream-tests.js
 	node tests/render-activities-tests.js
+	node tests/activity-comparator-tests.js

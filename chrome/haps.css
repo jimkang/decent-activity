@@ -9,6 +9,10 @@
   transition: opacity 1s;
 }
 
+.mefi-haps-activity .smallcopy a {
+  font-weight: 600;
+}
+
 .mefi-haps-activity.haps-visible {
   opacity: 1;
   transition: opacity 1s;

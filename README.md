@@ -1,4 +1,4 @@
-yet-another-bookmarklet
+decent-activity
 ==================
 
 This is a bookmarklet and possibly a Chrome extension that does some stuff.

@@ -1,4 +1,4 @@
-.mefi-haps-activity {
+.decent-activity {
   margin-left: 1em;
   margin-right: 1em;
   margin-top: 1em;
@@ -9,11 +9,15 @@
   transition: opacity 1s;
 }
 
-.mefi-haps-activity a {
+.decent-activity a {
   font-weight: 600;
 }
 
-.mefi-haps-activity.haps-visible {
+.decent-activity.haps-visible {
   opacity: 1;
   transition: opacity 1s;
+}
+
+.decent-activity.hap-read {
+  background-color: #eee;
 }

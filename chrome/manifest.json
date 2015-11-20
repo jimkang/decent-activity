@@ -16,14 +16,14 @@
 
   "browser_action": {
     "default_icon": {
-      "19": "yet-another-bookmarklet-icon-19.png",
-      "38": "yet-another-bookmarklet-icon-38.png"
+      "19": "decent-activity-icon-19.png",
+      "38": "decent-activity-icon-38.png"
     }
   },
 
   "icons": {
-    "16": "yet-another-bookmarklet-icon-16.png",
-    "128": "yet-another-bookmarklet-icon-128.png"
+    "16": "decent-activity-icon-16.png",
+    "128": "decent-activity-icon-128.png"
   },
 
   "content_scripts": [

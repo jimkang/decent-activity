@@ -1,5 +1,5 @@
 {
-  "name": "yet-another-bookmarklet",
+  "name": "decent-activity",
   "version": "1.0.0",
   "description": "Does some cool things.",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jimkang/yet-another-bookmarklet.git"
+    "url": "git@github.com:jimkang/decent-activity.git"
   },
   "keywords": [],
   "author": "Jim Kang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jimkang/yet-another-bookmarklet/issues"
+    "url": "https://github.com/jimkang/decent-activity/issues"
   },
-  "homepage": "https://github.com/jimkang/yet-another-bookmarklet",
+  "homepage": "https://github.com/jimkang/decent-activity",
   "devDependencies": {
     "call-next-tick": "^1.1.2",
     "jsdom": "^3.1.2",

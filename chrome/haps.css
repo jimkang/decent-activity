@@ -32,10 +32,9 @@
 .decent-activity-nav-root {
   display: flex;
   flex-direction: row;
-  font-weight: bold;
   color: #555;
   padding-left: 1em;
-  padding-right: 1.25em;
+  padding-right: 1em;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
   background-color: #f2f2f2;

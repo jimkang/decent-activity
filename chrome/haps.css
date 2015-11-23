@@ -43,6 +43,7 @@
 
 .decent-activity-nav-root a {
   font-weight: normal;
+  cursor: pointer;
 }
 
 .decent-activity-nav-root .center-label {

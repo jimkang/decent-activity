@@ -6,7 +6,7 @@
   "version": "1.0.1",
 
   "permissions": [
-    "http://*.metafilter.com/*"
+    "*://*.metafilter.com/*"
   ],
 
   "background": {
@@ -28,7 +28,7 @@
 
   "content_scripts": [
     {
-      "matches": ["http://*.metafilter.com/*"],
+      "matches": ["*://*.metafilter.com/*"],
       "css": ["haps.css"]
     }
   ]  

@@ -10,6 +10,7 @@ build-dev:
 test:
 	node tests/parse-contacts-test.js
 	node tests/get-activities-from-html-tests.js
+	node tests/get-activities-from-html-24-hour-clock-tests.js
 	node tests/activities-stream-tests.js
 	node tests/render-activities-tests.js
 	node tests/activity-comparator-tests.js

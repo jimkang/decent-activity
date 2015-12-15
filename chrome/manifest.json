@@ -3,7 +3,7 @@
 
   "name": "Decent Activity",
   "description": "Shows you recent comments from your MeFi contacts",
-  "version": "1.0.2",
+  "version": "1.0.3",
 
   "permissions": [
     "*://*.metafilter.com/*"
